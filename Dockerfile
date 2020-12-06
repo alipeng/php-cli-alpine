@@ -2,8 +2,7 @@ FROM php:cli-alpine
 
 LABEL maintainer Alipeng <alipeng@aliyun.com>
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
-    apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache --virtual .build-deps \
       $PHPIZE_DEPS \
       libtool \
       icu-dev \
